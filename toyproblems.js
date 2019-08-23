@@ -1,3 +1,13 @@
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+function highAndLow(numbers) {
+  let numbersArr = numbers.split(' ');
+  return `${Math.max.apply(null, numbersArr)} ${Math.min.apply(
+    null,
+    numbersArr
+  )}`;
+}
+
 // Return the number (count) of vowels in the given string.
 // We will consider a, e, i, o, and u as vowels for this Kata.
 // The input string will only consist of lower case letters and/or spaces.
