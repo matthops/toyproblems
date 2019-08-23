@@ -1,3 +1,20 @@
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, and u as vowels for this Kata.
+// The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+  let vowelsCount = 0;
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let arr = str.split('');
+  arr.forEach(letter => {
+    for (var i = 0; i <= vowels.length; i++) {
+      vowels[i] === letter ? vowelsCount++ : null;
+    }
+  });
+
+  return vowelsCount;
+}
+
 // Trolls are attacking your comment section!
 // A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
 // Your task is to write a function that takes a string and return a new string with all vowels removed.
@@ -5,26 +22,24 @@
 // Note: for this kata y isn't considered a vowel.
 
 function disemvowel(str) {
-  let vowels = ["a", "e", "i", "u", "o" ];
-  let arr = str.split("");
+  let vowels = ['a', 'e', 'i', 'u', 'o'];
+  let arr = str.split('');
   let newArr = [];
-  
-    arr.forEach( (letter, index) => {
-      for(var i = 0; i <= vowels.length - 1 ; i++){
-           vowels[i] === letter.toLowerCase() ? newArr.push(index) : null;
-      };
-    })
-    console.log("newarr", newArr)
-  
-  for(var i = newArr.length -1; i>= 0; i-- ){
-    console.log("newArr[i]", newArr[i])
-    arr.splice(newArr[i], 1)
-  }
-  
-    
-    return arr.join("");
+
+  arr.forEach((letter, index) => {
+    for (var i = 0; i <= vowels.length - 1; i++) {
+      vowels[i] === letter.toLowerCase() ? newArr.push(index) : null;
+    }
+  });
+  console.log('newarr', newArr);
+
+  for (var i = newArr.length - 1; i >= 0; i--) {
+    console.log('newArr[i]', newArr[i]);
+    arr.splice(newArr[i], 1);
   }
 
+  return arr.join('');
+}
 
 //Please refer to two example above and write your first JS function.
 
@@ -45,7 +60,7 @@ function disemvowel(str) {
 //In the end, click "Submit" to submit your code pass this kata.
 
 function helloWorld() {
-  var str = "Hello World!";
+  var str = 'Hello World!';
   console.log(str);
 }
 
@@ -92,10 +107,10 @@ function equal5() {
 // If the argument passed through is single digit or is already the maximum possible integer, your function should simply return it.
 
 function superSize(num) {
-  let splitNum = ("" + num)
-    .split("")
+  let splitNum = ('' + num)
+    .split('')
     .sort()
     .reverse()
-    .join("");
+    .join('');
   return parseInt(splitNum);
 }
