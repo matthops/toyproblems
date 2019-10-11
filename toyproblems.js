@@ -1,3 +1,40 @@
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+
+function getMiddle(s)
+{
+  //Code goes here!
+  // console.log( s.charAt(Math.floor(s.length / 2)) );
+  return s.length % 2 === 0 ? `${s.charAt((s.length / 2)-1)}${s.charAt((s.length / 2))}` : s.charAt(Math.floor(s.length / 2));
+}
+
+getMiddle("aaaaaaaaaajaaaaaaaaaa")
+
+
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+function XO(str) {
+  //code here
+let countO = 0;
+let countX = 0;
+str.toLowerCase().split("").forEach( (e) => {
+return e == "o" ? countO++ : e == "x" ? countX++ : null;
+})
+
+return countO === countX ? true : false;
+}
+
+XO("ooxXm")
+
+// XO("ooxx") => true
+// XO("xooxx") => false
+// XO("ooxXm") => true
+// XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+// XO("zzoo") => false
+
+
+
+
 //A square of squares
 // You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
 
@@ -138,3 +175,5 @@ function superSize(num) {
     .join('');
   return parseInt(splitNum);
 }
+
+
